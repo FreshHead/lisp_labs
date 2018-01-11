@@ -3,7 +3,15 @@
 		(t (+ a (composition a (- b 1) ))) ;(print (+ a (composition a (- b 1) ))))
 	)
 )
+
 ;(trace composition)
+
 (setq a 83.2)
 (setq b 72)
-(format t "~%Result of composition ~F and ~F is ~F " a b (composition a b))
+(setq result (composition a b))
+
+(format t "~%Result of composition ~F and ~F is ~F " a b result)
+
+(with-open-file (stream "outdata.txt" :direction :output)
+	(format stream "~F" result)
+)
