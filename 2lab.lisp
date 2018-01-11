@@ -1,0 +1,6 @@
+(defun composition(a b)
+	(cond ((= b 1) a)
+		(t (+ a (composition a (- b 1) )))
+	)
+)
+(write (composition 10 5))
